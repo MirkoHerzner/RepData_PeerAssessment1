@@ -119,7 +119,7 @@ rmis
 
 2304 rows are missing steps data.
 
-Fill in all of the missing values in the dataset
+Fill in all of the missing values in the dataset. I decided to use the interval means calculated above to replace the NA values with. 
 
 
 ```r

@@ -292,7 +292,7 @@ rmis
 
 <p>2304 rows are missing steps data.</p>
 
-<p>Fill in all of the missing values in the dataset</p>
+<p>Fill in all of the missing values in the dataset. I decided to use the interval means calculated above to replace the NA values with. </p>
 
 <pre><code class="r">imp &lt;- dplyr::left_join(data, stepsint, by = &quot;interval&quot;)
 imp &lt;- dplyr::select(imp, interval, steps.x, date.x, mean)
