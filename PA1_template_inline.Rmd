@@ -43,13 +43,9 @@ qplot(data = stepsday, x = stepsum, geom = "histogram")
 Calculate and report the mean and median of the total number of steps taken per day
 
 ```{r}
-rmean <- mean(stepsday[["stepsum"]], na.rm = "TRUE")
-rmean
-rmed <- median(stepsday[["stepsum"]], na.rm = "TRUE")
-rmed
+mean(stepsday[["stepsum"]], na.rm = "TRUE")
+median(stepsday[["stepsum"]], na.rm = "TRUE")
 ```
-
-The average number of steps taken per day is `r rmean`. The median is `r rmed`.
 
 ## What is the average daily activity pattern?
 
@@ -69,11 +65,8 @@ Which 5-minute interval contains the maximum number of steps?
 
 ```{r}
 stepsint <- dplyr::arrange(stepsint, mean)
-rsteps <- stepsint$interval[288]
-rsteps
+stepsint$interval[288]
 ```
-
-The interval `r rsteps` contains the maximum number of steps.
 
 ## Imputing missing values
 
@@ -81,11 +74,8 @@ Calculate and report the total number of rows with NAs
 
 ```{r}
 missing <- dplyr::filter(data, is.na(steps))
-rmis <- nrow(missing)
-rmis
+nrow(missing)
 ```
-
-`r rmis` rows are missing steps data.
 
 Fill in all of the missing values in the dataset
 
@@ -114,13 +104,9 @@ qplot(data = stepsdayimp, x = stepsum, geom = "histogram")
 Calculate and report the mean and median total number of steps taken per day
 
 ```{r}
-rmean <- mean(stepsdayimp[["stepsum"]])
-rmean
-rmed <- median(stepsdayimp[["stepsum"]])
-rmed
+mean(stepsdayimp[["stepsum"]])
+median(stepsdayimp[["stepsum"]])
 ```
-
-The average number of steps taken per day after imputation is `r rmean`. The median is `r rmed`.
 
 ### Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
